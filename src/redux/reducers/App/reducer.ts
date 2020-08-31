@@ -1,21 +1,24 @@
 import { 
   SET_THEME, 
+  TOGGLE_THEME, 
+  TOGGLE_VIEW, 
 } from "./actionTypes"
 import { Actions } from "./actions"
-import { Theme } from "./types";
+import { initialState, State } from "./initialState"
 
-export interface State {
-  theme: Theme
-}
 
-const initialState = {
-  theme: 'light',
-};
 
-export default function(state = initialState, action: Actions) {
+
+export default function(state: State = initialState, action: Actions): State {
   switch (action.type) {
     case SET_THEME: {
       return {...state, theme: action.theme}
+    }
+    case TOGGLE_THEME: {
+      return {...state, theme: state.theme === 'dark' ? 'light' : 'dark'}
+    }
+    case TOGGLE_VIEW: {
+      return {...state, view: state.view === 'front' ? 'back' : 'front'}
     }
     default:
       return state
