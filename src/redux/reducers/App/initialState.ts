@@ -1,16 +1,19 @@
-import { Theme } from "./types";
-import { Side } from "../../../types";
+import { Color, Tool, Placement } from "../../../types";
 
 export interface State {
-  theme: Theme,
-  view: Side,
-  zoom: number,
-  scale: number,
+  zoom: number;
+  scale: number;
+  view: Placement;
+  activeTool: Tool | null;
+  activeColor: Color;
+  activePtnum: number | null;
 }
 
 export const initialState: State = {
-  theme: 'dark',
-  view: 'front',
+  view: "front",
   zoom: 2,
-  scale: 4.44,
+  scale: 4.48,
+  activeColor: "black",
+  activeTool: null,
+  activePtnum: null,
 };

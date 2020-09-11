@@ -1,7 +1,4 @@
-import { Reducer } from '../index'
-
-
-
+import { State } from "../index";
 
 // export const get__tool = ( reducer: Reducer ) => reducer.Board.tool
 // export const get__current_ptnum = ( reducer: Reducer ) => reducer.Board.current_ptnum
@@ -10,10 +7,7 @@ import { Reducer } from '../index'
 // // export const get__width = ( reducer: Reducer ) => reducer.BoardReducer.width
 // // export const get__height = ( reducer: Reducer ) => reducer.BoardReducer.height
 
-
-
 // // export const get__pitch = ( reducer: Reducer ) => reducer.BoardReducer.board.grid.pitch
-
 
 // // export const get__grid = ( reducer: Reducer ) => reducer.BoardReducer.board.grid
 
@@ -22,27 +16,24 @@ import { Reducer } from '../index'
 
 // export const get__wireColor = ( reducer: Reducer ) => reducer.Board.wireColor
 
-
-
 // // export const get__board = (reducer: Reducer ) => reducer.BoardReducer.board
 
 // export const get__newHeader = (reducer: Reducer) => reducer.Board.newHeader
 
-
-
-
-
-
 // /////
-export const getDimensions = (reducer: Reducer) => {
-  const {width, height} = reducer.Board.grid
-  const {thickness} = reducer.Board
-  return ({width, height, thickness})
-}
-export const getWidth = ( reducer: Reducer ) => reducer.Board.grid.width;
-export const getHeight = ( reducer: Reducer ) => reducer.Board.grid.height;
-export const getThickness = ( reducer: Reducer ) => reducer.Board.thickness;
+export const getDimensions = (state: State) => {
+  const { width, height } = state.Board.grid;
+  const { thickness } = state.Board;
+  return { width, height, thickness };
+};
+export const getWidth = (state: State) => state.Board.grid.width;
+export const getHeight = (state: State) => state.Board.grid.height;
+export const getThickness = (state: State) => state.Board.thickness;
 
+export const getGrid = (state: State) => state.Board.grid;
+export const getColumns = (state: State) => state.Board.grid.columns;
+export const getRows = (state: State) => state.Board.grid.rows;
+export const getPitch = (state: State) => state.Board.grid.pitch;
 
-export const getGrid = (reducer: Reducer) => reducer.Board.grid;
-export const getPitch = (reducer: Reducer) => reducer.Board.grid.pitch;
+export const getPoints = (state: State) => state.Board.grid.points;
+// export const getCurrentColor = (reducer: Reducer) => reducer.Board.currentColor;

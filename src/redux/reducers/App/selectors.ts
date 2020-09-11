@@ -1,7 +1,8 @@
-import {Reducer} from '../index'
+import { State } from "../index";
 
-export const getTheme = (reducer: Reducer) => reducer.App.theme
+export const getView = (state: State) => state.App.view;
+export const getZoom = (state: State) => state.App.zoom;
+export const getScale = (state: State) => state.App.scale;
 
-export const getView = (reducer: Reducer) => reducer.App.view
-export const getZoom = (reducer: Reducer) => reducer.App.zoom
-export const getScale = (reducer: Reducer) => reducer.App.scale
+export const getActiveTool = (state: State) => state.App.activeTool;
+export const getActiveColor = (state: State) => state.App.activeColor;

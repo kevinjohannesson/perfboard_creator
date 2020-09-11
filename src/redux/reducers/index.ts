@@ -1,15 +1,15 @@
 import { combineReducers } from "redux";
-import Count from './Count/reducer'
-import {State as CountState} from './Count/reducer'
-import App from './App/reducer'
-import {State as AppState} from './App/initialState'
-import Board from './Board/reducer'
-import {State as BoardState} from './Board/initialState'
+import App from "./App/reducer";
+import { State as AppState } from "./App/initialState";
+import Board from "./Board/reducer";
+import { State as BoardState } from "./Board/initialState";
+import Project from "./Project/reducer";
+import { State as ProjectState } from "./Project/initialState";
 
-export interface Reducer {
-  Count: CountState,
-  App: AppState,
-  Board: BoardState,
+export interface State {
+  App: AppState;
+  Board: BoardState;
+  Project: ProjectState;
 }
 
-export default combineReducers({ Count, App, Board });
+export default combineReducers<State>({ App, Board, Project });
